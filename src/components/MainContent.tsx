@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Bot, Github, Mail, Search, Twitter } from "lucide-react";
 
 interface MainContentProps {
+  // @ts-ignore
   newsData: any[];
   isLoading: boolean;
 }
