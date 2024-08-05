@@ -7,6 +7,7 @@ import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import Background from './components/Background';
+import ErrorBoundary from './components/ErrorBoundary';
 
 // async function checkAndRefreshToken() {
 //   const accessToken = localStorage.getItem('access_token');
@@ -170,10 +171,12 @@ function App() {
         </div>
         <Background />
       </>,
+      errorElement: <ErrorBoundary />,
     },
     {
       path: "/callback",
       element: <Callback />,
+      errorElement: <ErrorBoundary />,
     }
   ])
   return (
