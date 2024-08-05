@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { makeGetRequest } from '../api/axios-request';
 import './App.css';
 import Callback from './Callback';
@@ -154,27 +154,30 @@ function App() {
       console.error("Error going to previous track:", error);
     }
   };
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <>
+        <div className="h-dvh w-screen flex flex-col justify-between">
+          <Header
+            isAuthorized={isAuthorized}
+            currentlyPlayingTrack={currentlyPlayingTrack}
+            handleNextTrack={handleNextTrack}
+            handlePrevTrack={handlePrevTrack}
+          />
+          <MainContent newsData={newsData} isLoading={isLoading} />
+          <Footer />
+        </div>
+        <Background />
+      </>,
+    },
+    {
+      path: "/callback",
+      element: <Callback />,
+    }
+  ])
   return (
-    <Router>
-      <Routes>
-        <Route path="/callback" element={<Callback />} />
-        <Route path="/" element={
-          <>
-            <div className="h-dvh w-screen flex flex-col justify-between">
-              <Header
-                isAuthorized={isAuthorized}
-                currentlyPlayingTrack={currentlyPlayingTrack}
-                handleNextTrack={handleNextTrack}
-                handlePrevTrack={handlePrevTrack}
-              />
-              <MainContent newsData={newsData} isLoading={isLoading} />
-              <Footer />
-            </div>
-            <Background />
-          </>
-        } />
-      </Routes>
-    </Router>
+    <RouterProvider router={router} />
   );
 }
 
