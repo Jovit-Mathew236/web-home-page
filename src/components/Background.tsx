@@ -8,7 +8,7 @@ const Background: React.FC = () => {
   return (
     <>
       <div className="h-screen w-screen z-10 top-0 absolute pointer-events-none opacity-35">
-        <p className="bg-[url('/assets/noise.webp')] object-cover h-screen"></p>
+        {/* <p className="bg-[url('/assets/noise.webp')] object-cover h-screen"></p> */}
       </div>
       <div className="h-screen w-screen z-0 top-0 absolute pointer-events-none">
         <ShaderGradientCanvas
