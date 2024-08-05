@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const CLIENT_ID = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
 const CLIENT_SECRET = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
@@ -7,15 +7,16 @@ const REDIRECT_URI = `${import.meta.env.VITE_BASE_URL}/callback`
 
 function Callback() {
     const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
-        const urlParams = new URLSearchParams(window.location.search);
+        const urlParams = new URLSearchParams(location.search);
         const code = urlParams.get('code');
 
         if (code) {
             exchangeCodeForToken(code);
         }
-    }, []);
+    }, [location]);
 
     async function exchangeCodeForToken(code) {
         try {
