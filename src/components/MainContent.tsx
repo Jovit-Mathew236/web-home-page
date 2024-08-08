@@ -84,7 +84,7 @@ const MainContent: React.FC<MainContentProps> = ({ newsData, isLoading }) => {
             placeholder="Talk to our AI"
           />
 
-          <div className="lg:h-36 md:p-5 bg-black/40 rounded-3xl flex gap-1 justify-center items-center overflow-scroll">
+          <div className="lg:h-[220px] md:p-5 bg-black/40 rounded-3xl flex gap-1 justify-center items-center overflow-scroll">
             <a
               href="https://figma.com"
               target="_blank"

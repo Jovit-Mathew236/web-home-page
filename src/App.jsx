@@ -159,7 +159,7 @@ function App() {
     {
       path: "/",
       element: <>
-        <div className="h-dvh w-screen flex flex-col justify-between">
+        <div className="h-full w-screen flex flex-col justify-between">
           <Header
             isAuthorized={isAuthorized}
             currentlyPlayingTrack={currentlyPlayingTrack}

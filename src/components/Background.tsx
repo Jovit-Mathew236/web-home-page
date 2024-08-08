@@ -10,7 +10,7 @@ const Background: React.FC = () => {
       <div className="h-screen w-screen z-10 top-0 absolute pointer-events-none opacity-35">
         {/* <p className="bg-[url('/assets/noise.webp')] object-cover h-screen"></p> */}
       </div>
-      <div className="h-screen w-screen z-0 top-0 absolute pointer-events-none">
+      <div className="h-full w-full z-0 top-0 fixed pointer-events-none">
         <ShaderGradientCanvas
           importedFiber={{ ...fiber, ...drei, ...reactSpring }}
           style={{
