@@ -84,11 +84,12 @@ const MainContent: React.FC<MainContentProps> = ({ newsData, isLoading }) => {
             placeholder="Talk to our AI"
           />
 
-          <div className="lg:h-36 md:p-5 bg-black/40 rounded-3xl flex gap-20 justify-center items-center overflow-scroll">
+          <div className="lg:h-36 md:p-5 bg-black/40 rounded-3xl flex gap-1 justify-center items-center overflow-scroll">
             <a
               href="https://figma.com"
               target="_blank"
               rel="noopener noreferrer"
+              className="w-20 h-full place-content-center"
             >
               <img
                 src="https://www.google.com/s2/favicons?domain=figma.com&sz=40"
@@ -99,13 +100,19 @@ const MainContent: React.FC<MainContentProps> = ({ newsData, isLoading }) => {
               href="https://youtube.com"
               target="_blank"
               rel="noopener noreferrer"
+              className="w-20 h-full place-content-center"
             >
               <img
                 src="https://www.google.com/s2/favicons?domain=youtube.com&sz=40"
                 alt="YouTube"
               />
             </a>
-            <a href="https://x.com" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://x.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-20 h-full place-content-center"
+            >
               <img
                 src="https://www.google.com/s2/favicons?domain=x.com&sz=40"
                 alt="X"
@@ -115,6 +122,7 @@ const MainContent: React.FC<MainContentProps> = ({ newsData, isLoading }) => {
               href="https://whatsapp.com"
               target="_blank"
               rel="noopener noreferrer"
+              className="w-20 h-full place-content-center"
             >
               <img
                 src="https://www.google.com/s2/favicons?domain=whatsapp.com&sz=40"
@@ -125,6 +133,7 @@ const MainContent: React.FC<MainContentProps> = ({ newsData, isLoading }) => {
               href="https://savee.it"
               target="_blank"
               rel="noopener noreferrer"
+              className="w-20 h-full place-content-center"
             >
               <img
                 src="https://www.google.com/s2/favicons?domain=savee.it&sz=40"

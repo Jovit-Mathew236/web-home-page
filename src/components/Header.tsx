@@ -15,12 +15,24 @@ const Header: React.FC<HeaderProps> = ({
   handleNextTrack,
   handlePrevTrack,
 }) => {
+  const currentDate = new Date();
+  const formattedDate = currentDate.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+  const formattedTime = currentDate.toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+  });
+
   return (
     <div className="flex z-50 relative flex-col flex-wrap bg-transparent">
       <div className="w-screen flex flex-wrap lg:flex-nowrap justify-between border-x-0 border-y-2 border-t-0 text-white">
         <div className="grow lg:grow-0 order-1 p-5 text-sm lg:text-3xl border border-y-0 border-l-0 flex items-center gap-14">
-          <p>2nd July 2024</p>
-          <p>6:35 PM</p>
+          <p>{formattedDate}</p>
+          <p className="w-[145px]">{formattedTime}</p>
         </div>
 
         <div className="grow order-3 lg:order-2 lg:grow-0 p-1 w-[65%] border-t-2 lg:border-0">
